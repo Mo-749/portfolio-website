@@ -32,6 +32,15 @@
                         <div class="space-y-4">
                             @foreach ($projects as $project)
                                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+
+                                    @if ($project->image)
+                                        <img
+                                            src="{{ asset('storage/' . $project->image) }}"
+                                            alt="{{ $project->title }}"
+                                            class="w-48 h-32 object-cover rounded-lg mb-4"
+                                        >
+                                    @endif
+
                                     <h4 class="text-lg font-semibold">
                                         {{ $project->title }}
                                     </h4>
@@ -62,6 +71,7 @@
                                             </button>
                                         </form>
                                     </div>
+
                                 </div>
                             @endforeach
                         </div>

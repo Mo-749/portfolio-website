@@ -17,6 +17,16 @@
                     {{ $project->description }}
                 </p>
 
+                            @if ($project->image)
+                <div class="mt-6">
+                    <img
+                        src="{{ asset('storage/' . $project->image) }}"
+                        alt="{{ $project->title }}"
+                        class="max-w-full h-auto rounded-lg shadow"
+                    >
+                </div>
+            @endif
+
                 <div class="mt-6 flex gap-3">
                     <a href="{{ route('projects.index') }}"
                        class="px-4 py-2 bg-gray-500 text-white rounded">
